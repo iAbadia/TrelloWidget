@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/badges_layout"
         android:layout_below="@+id/labels_layout"
-        android:paddingBottom="@dimen/card_padding"
+        android:paddingBottom="@dimen/title_padding"
         android:paddingEnd="@dimen/card_title_outter_padding"
         android:paddingStart="@dimen/card_title_outter_padding"
-        android:paddingTop="@dimen/card_padding"
+        android:paddingTop="@dimen/title_padding"
         android:text="@string/card_title" />
 
     <LinearLayout

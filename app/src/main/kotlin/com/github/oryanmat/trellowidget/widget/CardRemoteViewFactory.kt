@@ -70,6 +70,19 @@ class CardRemoteViewFactory(private val context: Context,
         setComments(views, card)
         setChecklist(views, card)
         setAttachments(views, card)
+
+        // If no badges, set as GONE
+        if (card.badges.subscribed.not() and
+                (card.badges.votes <= 0) and
+                (card.badges.due == null) and
+                card.badges.description.not() and
+                (card.badges.comments <= 0) and
+                (card.badges.checkItems <= 0) and
+                (card.badges.attachments <= 0)) {
+            views.setViewVisibility(R.id.badges_layout, View.GONE)
+        } else {
+            views.setViewVisibility(R.id.badges_layout, View.VISIBLE)
+        }
     }
 
     private fun setTitle(views: RemoteViews, card: Card) {
@@ -140,8 +153,7 @@ class CardRemoteViewFactory(private val context: Context,
         // Disable Labels ListView if empty (so no padding/margin is applied)
         if (card.labels.isEmpty()) {
             views.setViewVisibility(R.id.labels_layout, View.GONE)
-        }
-        else {
+        } else {
             views.setViewVisibility(R.id.labels_layout, View.VISIBLE)
             card.labels.forEach { setLabel(views, it) }
         }
