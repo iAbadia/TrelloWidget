@@ -15,37 +15,39 @@ import com.github.oryanmat.trellowidget.R
 import com.github.oryanmat.trellowidget.model.BoardList
 import com.github.oryanmat.trellowidget.model.Card
 import com.github.oryanmat.trellowidget.model.Label
-import com.github.oryanmat.trellowidget.util.DateTimeUtil
+import com.github.oryanmat.trellowidget.util.*
+import com.github.oryanmat.trellowidget.util.RemoteViewsUtil.setBackgroundColor
 import com.github.oryanmat.trellowidget.util.RemoteViewsUtil.setImage
 import com.github.oryanmat.trellowidget.util.RemoteViewsUtil.setImageViewColor
 import com.github.oryanmat.trellowidget.util.RemoteViewsUtil.setTextView
-import com.github.oryanmat.trellowidget.util.TrelloAPIUtil
 import com.github.oryanmat.trellowidget.util.color.colors
 import com.github.oryanmat.trellowidget.util.color.dim
-import com.github.oryanmat.trellowidget.util.getCardForegroundColor
-import com.github.oryanmat.trellowidget.util.getList
 import java.util.*
 
 class CardRemoteViewFactory(private val context: Context,
                             private val appWidgetId: Int) : RemoteViewsService.RemoteViewsFactory {
     private var cards: List<Card> = ArrayList()
     @ColorInt private var color = 0
+    @ColorInt private var colorBg = 0
 
     override fun onDataSetChanged() {
         var list = context.getList(appWidgetId)
         list = TrelloAPIUtil.instance.getCards(list)
         color = context.getCardForegroundColor()
+        colorBg = context.getCardBackgroundColor()
 
         if (BoardList.ERROR != list.id) {
             cards = list.cards
         } else {
             color = color.dim()
+            colorBg = colorBg.dim()
         }
     }
 
     override fun getViewAt(position: Int): RemoteViews {
         val card = cards[position]
         val views = RemoteViews(context.packageName, R.layout.card)
+        setCardBackground(views, card)
         setLabels(views, card)
         setTitle(views, card)
         setBadges(views, card)
@@ -72,6 +74,10 @@ class CardRemoteViewFactory(private val context: Context,
 
     private fun setTitle(views: RemoteViews, card: Card) {
         setTextView(context, views, R.id.card_title, card.name, color, R.dimen.card_badges_text)
+    }
+
+    private fun setCardBackground(views: RemoteViews, card: Card) {
+        setBackgroundColor(views, R.id.card, colorBg)
     }
 
     private fun setSubscribed(views: RemoteViews, card: Card) {

@@ -68,7 +68,8 @@ class TrelloWidgetProvider : AppWidgetProvider() {
     }
 
     private fun updateCardList(appWidgetId: Int, context: Context, views: RemoteViews) {
-        setBackgroundColor(views, R.id.card_frame, context.getCardBackgroundColor())
+        // Removed so background is per card, this way separators can be transparent
+        //setCardsBackgroundColor(views, R.id.card_list, context.getCardBackgroundColor())
         views.setTextColor(R.id.empty_card_list, context.getCardForegroundColor())
         views.setEmptyView(R.id.card_list, R.id.empty_card_list)
         views.setPendingIntentTemplate(R.id.card_list, getCardPendingIntent(context))

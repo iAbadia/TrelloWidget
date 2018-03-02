@@ -2,13 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@android:color/transparent"
     android:padding="@dimen/widget_margin">
 
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/widget_background"
+        android:src="@android:color/transparent"
         tools:ignore="ContentDescription" />
 
     <LinearLayout
@@ -64,20 +65,24 @@
         <ImageView
             android:id="@+id/divider"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:src="@drawable/divider"
+            android:layout_height="0dp"
+            android:src="@android:color/transparent"
             tools:ignore="ContentDescription" />
 
         <FrameLayout
             android:id="@+id/card_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
 
             <ListView
                 android:id="@+id/card_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@null" />
+                android:background="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="4dp"
+                android:scrollbars="none" />
 
             <TextView
                 android:id="@+id/empty_card_list"

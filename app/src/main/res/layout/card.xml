@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/card">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/labels_layout"
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingEnd="@dimen/title_padding"
-        android:paddingStart="@dimen/title_padding"/>
+        android:paddingStart="@dimen/title_padding" />
 
     <TextView
         android:id="@+id/card_title"
@@ -95,14 +95,5 @@
             style="@style/WidgetItemBadge" />
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/list_item_divider"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/badges_layout"
-        android:layout_marginTop="@dimen/card_padding_bottom"
-        android:src="@drawable/divider"
-        tools:ignore="ContentDescription" />
 
 </RelativeLayout>
