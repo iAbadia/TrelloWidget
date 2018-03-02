@@ -152,7 +152,7 @@ class CardRemoteViewFactory(private val context: Context,
         labelColor = Color.argb(alpha(color), red(labelColor), green(labelColor), blue(labelColor))
         val view = RemoteViews(context.packageName, R.layout.label)
         setImageViewColor(view, R.id.label, labelColor)
-        setImage(context, view, R.id.label, R.drawable.label)
+        setImage(context, view, R.id.label, R.drawable.label_big)
         views.addView(R.id.labels_layout, view)
     }
 

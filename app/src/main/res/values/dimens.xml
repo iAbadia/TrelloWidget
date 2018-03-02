@@ -21,6 +21,9 @@
 
     <!-- Widget Dimens iAbadia -->
     <dimen name="card_inner_spacing">4dp</dimen>
+    <dimen name="card_title_outter_padding">6dp</dimen>
+    <dimen name="labels_outter_padding">2dp</dimen>
     <dimen name="card_padding">2dp</dimen>
+    <dimen name="badges_padding">2dp</dimen>
 
 </resources>

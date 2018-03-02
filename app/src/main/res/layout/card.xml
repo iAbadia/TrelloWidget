@@ -10,18 +10,23 @@
         android:id="@+id/labels_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/card_title"
         android:orientation="horizontal"
-        android:paddingEnd="@dimen/card_inner_spacing"
-        android:paddingStart="@dimen/card_inner_spacing"
+        android:paddingEnd="@dimen/labels_outter_padding"
+        android:paddingStart="@dimen/labels_outter_padding"
         android:paddingTop="@dimen/card_inner_spacing" />
 
     <TextView
         android:id="@+id/card_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/labels_layout"
-        android:padding="@dimen/card_inner_spacing"
+        android:layout_alignStart="@+id/badges_layout"
+        android:layout_below="@+id/labels_layout"
+        android:paddingBottom="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_title_outter_padding"
+        android:paddingStart="@dimen/card_title_outter_padding"
+        android:paddingTop="@dimen/card_padding"
         android:text="@string/card_title" />
 
     <LinearLayout
@@ -38,64 +43,75 @@
             android:id="@+id/subscribed"
             style="@style/WidgetItemBadge"
             android:contentDescription="@string/card_subscribed_desc"
-            android:padding="@dimen/card_inner_spacing"
+            android:padding="@dimen/badges_padding"
             android:src="@drawable/ic_visibility_white_24dp" />
 
         <ImageView
             android:id="@+id/votes"
             style="@style/WidgetItemBadge"
             android:contentDescription="@string/votes_desc"
+            android:padding="@dimen/badges_padding"
             android:src="@drawable/ic_thumb_up_white_24dp" />
 
         <TextView
             android:id="@+id/vote_count"
-            style="@style/WidgetItemBadge" />
+            style="@style/WidgetItemBadge"
+            android:padding="@dimen/badges_padding" />
 
         <ImageView
             android:id="@+id/due"
             style="@style/WidgetItemBadge"
             android:contentDescription="@string/due_date_desc"
+            android:padding="@dimen/badges_padding"
             android:src="@drawable/ic_access_time_white_24dp" />
 
         <TextView
             android:id="@+id/due_string"
-            style="@style/WidgetItemBadge" />
+            style="@style/WidgetItemBadge"
+            android:padding="@dimen/badges_padding" />
 
         <ImageView
             android:id="@+id/desc"
             style="@style/WidgetItemBadge"
             android:contentDescription="@string/card_desc_desc"
+            android:padding="@dimen/badges_padding"
             android:src="@drawable/ic_subject_white_24dp" />
 
         <ImageView
             android:id="@+id/comments"
             style="@style/WidgetItemBadge"
             android:contentDescription="@string/comments_desc"
+            android:padding="@dimen/badges_padding"
             android:src="@drawable/ic_chat_bubble_outline_white_24dp" />
 
         <TextView
             android:id="@+id/comment_count"
-            style="@style/WidgetItemBadge" />
+            style="@style/WidgetItemBadge"
+            android:padding="@dimen/badges_padding" />
 
         <ImageView
             android:id="@+id/attachment"
             style="@style/WidgetItemBadge"
             android:contentDescription="@string/attachments_desc"
+            android:padding="@dimen/badges_padding"
             android:src="@drawable/ic_attachment_white_24dp" />
 
         <TextView
             android:id="@+id/attachment_count"
-            style="@style/WidgetItemBadge" />
+            style="@style/WidgetItemBadge"
+            android:padding="@dimen/badges_padding" />
 
         <ImageView
             android:id="@+id/checklist"
             style="@style/WidgetItemBadge"
             android:contentDescription="@string/checklist_desc"
+            android:padding="@dimen/badges_padding"
             android:src="@drawable/ic_check_box_white_24dp" />
 
         <TextView
             android:id="@+id/checklist_count"
-            style="@style/WidgetItemBadge" />
+            style="@style/WidgetItemBadge"
+            android:padding="@dimen/badges_padding" />
 
     </LinearLayout>
 

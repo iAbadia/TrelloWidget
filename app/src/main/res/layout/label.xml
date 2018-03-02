@@ -9,7 +9,9 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/label"
+        android:paddingEnd="@dimen/card_inner_spacing"
+        android:paddingStart="@dimen/card_inner_spacing"
+        android:src="@drawable/label_big"
         tools:ignore="ContentDescription" />
 
 </LinearLayout>
