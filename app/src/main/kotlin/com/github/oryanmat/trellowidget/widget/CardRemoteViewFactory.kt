@@ -51,7 +51,7 @@ class CardRemoteViewFactory(private val context: Context,
         setLabels(views, card)
         setTitle(views, card)
         setBadges(views, card)
-        setDivider(views)
+        //setDivider(views)
         setOnClickFillInIntent(views, card)
 
         return views
@@ -137,7 +137,14 @@ class CardRemoteViewFactory(private val context: Context,
 
     private fun setLabels(views: RemoteViews, card: Card) {
         views.removeAllViews(R.id.labels_layout)
-        card.labels.forEach { setLabel(views, it) }
+        // Disable Labels ListView if empty (so no padding/margin is applied)
+        if (card.labels.isEmpty()) {
+            views.setViewVisibility(R.id.labels_layout, View.GONE)
+        }
+        else {
+            views.setViewVisibility(R.id.labels_layout, View.VISIBLE)
+            card.labels.forEach { setLabel(views, it) }
+        }
     }
 
     private fun setLabel(views: RemoteViews, label: Label) {
@@ -149,7 +156,7 @@ class CardRemoteViewFactory(private val context: Context,
         views.addView(R.id.labels_layout, view)
     }
 
-    private fun setDivider(views: RemoteViews) = setImageViewColor(views, R.id.list_item_divider, color)
+    //private fun setDivider(views: RemoteViews) = setImageViewColor(views, R.id.list_item_divider, color)
 
     override fun onCreate() {
     }

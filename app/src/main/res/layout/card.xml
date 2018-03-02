@@ -3,24 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/card_padding">
 
     <LinearLayout
         android:id="@+id/labels_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingEnd="@dimen/title_padding"
-        android:paddingStart="@dimen/title_padding" />
+        android:paddingEnd="@dimen/card_inner_spacing"
+        android:paddingStart="@dimen/card_inner_spacing"
+        android:paddingTop="@dimen/card_inner_spacing" />
 
     <TextView
         android:id="@+id/card_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_below="@id/labels_layout"
-        android:paddingEnd="@dimen/title_padding"
-        android:paddingStart="@dimen/title_padding"
-        android:paddingTop="@dimen/card_padding_top"
+        android:padding="@dimen/card_inner_spacing"
         android:text="@string/card_title" />
 
     <LinearLayout
@@ -29,13 +30,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/card_title"
         android:orientation="horizontal"
-        android:paddingEnd="@dimen/title_padding"
-        android:paddingStart="@dimen/title_padding">
+        android:paddingBottom="@dimen/card_inner_spacing"
+        android:paddingEnd="@dimen/card_inner_spacing"
+        android:paddingStart="@dimen/card_inner_spacing">
 
         <ImageView
             android:id="@+id/subscribed"
             style="@style/WidgetItemBadge"
             android:contentDescription="@string/card_subscribed_desc"
+            android:padding="@dimen/card_inner_spacing"
             android:src="@drawable/ic_visibility_white_24dp" />
 
         <ImageView
