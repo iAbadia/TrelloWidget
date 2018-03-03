@@ -13,9 +13,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/card_title"
         android:orientation="horizontal"
-        android:paddingEnd="@dimen/labels_outter_padding"
-        android:paddingStart="@dimen/labels_outter_padding"
-        android:paddingTop="@dimen/card_inner_spacing" />
+        android:paddingEnd="@dimen/card_inner_spacing"
+        android:paddingStart="@dimen/card_inner_spacing"
+        android:paddingTop="@dimen/card_title_outter_padding" />
 
     <TextView
         android:id="@+id/card_title"
@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/badges_layout"
         android:layout_below="@+id/labels_layout"
-        android:paddingBottom="@dimen/title_padding"
+        android:paddingBottom="@dimen/card_inner_spacing"
         android:paddingEnd="@dimen/card_title_outter_padding"
         android:paddingStart="@dimen/card_title_outter_padding"
-        android:paddingTop="@dimen/title_padding"
+        android:paddingTop="@dimen/card_inner_spacing"
         android:text="@string/card_title" />
 
     <LinearLayout

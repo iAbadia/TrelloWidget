@@ -8,9 +8,9 @@
     <ImageView
         android:id="@+id/label"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingEnd="@dimen/card_inner_spacing"
-        android:paddingStart="@dimen/card_inner_spacing"
+        android:layout_height="match_parent"
+        android:paddingEnd="@dimen/labels_outter_padding"
+        android:paddingStart="@dimen/labels_outter_padding"
         android:src="@drawable/label_big"
         tools:ignore="ContentDescription" />
 
